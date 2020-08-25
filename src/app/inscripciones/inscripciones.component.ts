@@ -182,6 +182,14 @@ enviarFormulario(formData){
       this.preinscripcion.errorDireccion();
       return false;
     }
+    if(this.preinscripcion.calle1 == ''){
+      this.preinscripcion.errorCalle1();
+      return false;
+    }
+    if(this.preinscripcion.calle2 == ''){
+      this.preinscripcion.errorCalle2();
+      return false;
+    }
     if(this.formaPago.trim() === ''){
 
     }
@@ -197,6 +205,7 @@ enviarFormulario(formData){
       this.preinscripcion.errorTipoLicencia();
       return false;
     }
+
     return true;
   }
 
