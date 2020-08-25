@@ -5,12 +5,23 @@
       <h2 class="w3ls_head">Solicitud de Preinscripción</h2>
       <!--mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar-->
       <br>
-      <h2>LICENCIA TIPO C - MODALIDAD ONLINE</h2>
+      <h2>MODALIDAD ONLINE</h2>
       <br>
     </div>
     <div class="form container">
       <div class="row">
-        <div class="form-group col-md-4">
+        <div class="form-group col-md-6">
+          <div class="address">
+            <h5>Tipo de Licencia.</h5>
+            <select name="TipoLic" class="form-control" id="" [(ngModel)]="preinscripcion.tipoLicencia">
+              <option value="">Seleccione el tipo de Licencia</option>
+              <option value="C">Licencia tipo C</option>
+              <option value="D">Licencia tipo D</option>
+              <option value="E">Licencia tipo E</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group col-md-6">
           <div class="address">
             <h5>Fecha de Nac.</h5>
           </div>

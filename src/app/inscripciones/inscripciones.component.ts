@@ -115,6 +115,7 @@ enviar(){
     formData.append('_estado',this.preinscripcion.estado_civil);
     formData.append('_instruccion',this.preinscripcion.instruccion);
     formData.append('_nacionalidad',this.preinscripcion.nacionalidad);
+    formData.append('_tipoLicencia',this.preinscripcion.tipoLicencia);
 
     if (this.formaPago == 'TB'){
       if(this.comprobante){
@@ -190,6 +191,10 @@ enviarFormulario(formData){
     }
     if(this.preinscripcion.telefono.trim() == ''){
       this.preinscripcion.errorTelefono();
+      return false;
+    }
+    if(this.preinscripcion.tipoLicencia.trim() == ''){
+      this.preinscripcion.errorTipoLicencia();
       return false;
     }
     return true;

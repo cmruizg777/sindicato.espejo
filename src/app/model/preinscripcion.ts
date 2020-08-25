@@ -17,7 +17,7 @@ export class Preinscripcion{
     'Debe ingresar un email válido',
     'Debe ingresar su tipo de sangre',
     'Debe ingresar su disponibilidad de tiempo',
-
+    'Debe seleccionar el tipo de licencia'
   ]
   nombres: string = '';
   apellidos: string = '';
@@ -35,6 +35,7 @@ export class Preinscripcion{
   telefono: string= '';
   correo: string= '';
   tipoSangre: string= '';
+  tipoLicencia: string= '';
   disponibilidad: string= '';
 
   errorNombres(){
@@ -82,5 +83,7 @@ export class Preinscripcion{
   errorTipoSnagre(){
     alert(this.mensajes[14]);
   }
-
+  errorTipoLicencia(){
+    alert(this.mensajes[15]);
+  }
 }
