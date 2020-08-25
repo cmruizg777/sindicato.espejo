@@ -1,0 +1,32 @@
+.horarios{
+  background-color: #FFF;
+  box-sizing: border-box;
+  padding: 10px 20px;
+}
+#paypal-button-container{
+  min-height: 250px;
+}
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: black !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: black !important;
+ }
+
+ ::ng-deep.mat-form-field-ripple {
+  /*change color of underline when focused*/
+  background-color: black !important;;
+ }
+
+ ::ng-deep .mat-form-field-label {
+  /*change color of label*/
+  color: black !important;
+ }
+
+
+ mat-datepicker-toggle {
+  color: black !important;
+ }

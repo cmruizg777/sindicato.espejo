@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Google Fonts
+  ============================================= -->
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,900,700,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="Escuela de Manejo, Sindicato de choferes, Espejo" />
+  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+      function hideURLbar(){ window.scrollTo(0,1); }
+  </script>
+  <!-- //custom-theme -->
+  <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+  <!-- js -->
+  <script type="text/javascript" src="assets/js/jquery-2.1.4.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- //js -->
+  <!-- font-awesome-icons -->
+  <link href="assets/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/flexslider.css" type="text/css" media="screen" property="" />
+  <!-- //font-awesome-icons -->
+  <link href="//fonts.googleapis.com/css?family=Prompt:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext,thai,vietnamese" rel="stylesheet">
+
+  <title>SINDICATO DE CHOFERES PROFESIONALES| CANTON ESPEJO</title>
+  <base href="/">
+
+</head>
+<body>
+
+  <app-root></app-root>
+
+
+  <!-- start-smooth-scrolling -->
+  <script type="text/javascript" src="./assets/js/move-top.js"></script>
+  <script type="text/javascript" src="assets/js/easing.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $(".scroll").click(function(event){
+        event.preventDefault();
+        $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+      });
+    });
+  </script>
+  <!-- start-smooth-scrolling -->
+  <!-- for bootstrap working -->
+    <script src="assets/js/bootstrap.js"></script>
+  <!-- //for bootstrap working -->
+  <!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+      });
+
+  </script>
+  <!--script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD" data-sdk-integration-source="button-factory"></script>
+  <script>
+    $(document).ready(()=>{
+        paypal.Buttons({
+          style: {
+              shape: 'rect',
+              color: 'gold',
+              layout: 'vertical',
+              label: 'paypal',
+
+          },
+          createOrder: function(data, actions) {
+              return actions.order.create({
+                  purchase_units: [{
+                      amount: {
+                          value: '25'
+                      }
+                  }]
+              });
+          },
+          onApprove: function(data, actions) {
+              return actions.order.capture().then(function(details) {
+                  alert('Transaction completed by ' + details.payer.name.given_name + '!');
+              });
+          }
+      }).render('#paypal-button-container');
+    });
+  </script-->
+<!-- //here ends scrolling icon -->
+<script src="runtime.js" defer></script><script src="polyfills.js" defer></script><script src="styles.js" defer></script><script src="vendor.js" defer></script><script src="main.js" defer></script></body>
+</html>

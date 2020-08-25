@@ -1,0 +1,148 @@
+
+<div class="contact">
+  <div class="container">
+    <div class="w3l-heading">
+      <h2 class="w3ls_head">Solicitud de Preinscripción</h2>
+      <!--mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar-->
+      <br>
+      <h2>LICENCIA TIPO C - MODALIDAD ONLINE</h2>
+      <br>
+    </div>
+    <div class="form container">
+      <div class="row">
+        <div class="form-group col-md-4">
+          <div class="address">
+            <h5>Fecha de Nac.</h5>
+          </div>
+          <input name="fecha"  matInput [matDatepicker]="dp" [min]="start" placeholder="yyyy-mm-dd"  [(ngModel)]="fecha">
+          <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+          <mat-datepicker  #dp [startAt]="start"></mat-datepicker>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-4">
+          <div class="address">
+            <h5>Nombres:</h5>
+          </div>
+          <input name="Nombre" class="form-control" placeholder="Juan José" type="text" [(ngModel)]="preinscripcion.nombres" required="">
+        </div>
+
+        <div class="form-group col-md-4">
+          <div class="address">
+            <h5>Apellidos:</h5>
+          </div>
+          <input name="Apellido" class="form-control" placeholder="Pérez" type="text" [(ngModel)]="preinscripcion.apellidos" required="">
+        </div>
+        <div class="form-group col-md-4">
+          <div class="address">
+            <h5>Cédula:</h5>
+          </div>
+          <input name="Cedula" class="form-control" placeholder="0452813749" type="text" [(ngModel)]="preinscripcion.cedula" (change)="validarCedula()"  maxlength="10" required=""  >
+        </div>
+        <div class="form-group col-md-4">
+          <div class="address">
+            <h5>Nacionalidad:</h5>
+          </div>
+          <input name="Nacionalidad"  class="form-control" placeholder="Ecuatoriana" type="text" [(ngModel)]="preinscripcion.nacionalidad"  required=""  >
+        </div>
+
+        <div class="form-group col-md-4">
+          <div class="address">
+            <h5>Lugar de Nac:</h5>
+          </div>
+          <input name="LugarNac" class="form-control" placeholder="Ecuador-Carchi-Tulcán" type="text" [(ngModel)]="preinscripcion.lugarNaciemiento"  required=""  >
+        </div>
+        <div class="form-group col-md-4">
+          <div class="address">
+            <h5>Estado civil:</h5>
+          </div>
+          <select name="EstadoC" class="form-control" id="" [(ngModel)]="preinscripcion.estado_civil">
+            <option value="S">Soltero</option>
+            <option value="C">Casado</option>
+            <option value="V">Viudo</option>
+            <option value="D">Divorciado</option>
+            <option value="U">Unión Libre</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+          <div class="address">
+            <h5>Email:</h5>
+          </div>
+          <input class="form-control" name="Email" placeholder="sindicatoespejo@hotmail.com" type="email" [(ngModel)]="preinscripcion.correo" required="">
+        </div>
+        <div class="form-group col-md-4">
+          <div class="address">
+            <h5>Telefono:</h5>
+          </div>
+          <input name="Telf" class="form-control" placeholder="0989898989" type="text" [(ngModel)]="preinscripcion.telefono" required="">
+        </div>
+        <div class="form-group col-md-4">
+          <div class="address">
+            <h5>Instrucción:</h5>
+          </div>
+          <select class="form-control" name="EstadoC" id="" [(ngModel)]="preinscripcion.estado_civil">
+            <option value="P">Primaria</option>
+            <option value="S">Secundaria</option>
+            <option value="B">Bachiller</option>
+            <option value="T">Tercer Nivel</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+          <div class="address">
+            <h5>Dirección:</h5>
+          </div>
+          <input name="Direccion" class="form-control" placeholder="Tulcán, Barrio Central" type="text" [(ngModel)]="preinscripcion.direccion" required="">
+        </div>
+        <div class="form-group col-md-4">
+          <div class="address">
+            <h5>Calle Princ.:</h5>
+          </div>
+          <input name="Calle2" class="form-control" placeholder="Bolivar" type="text" [(ngModel)]="preinscripcion.calle1" required="">
+        </div>
+        <div class="form-group col-md-4">
+          <div class="address">
+            <h5>Calle Sec.:</h5>
+          </div>
+          <input name="Calle1" class="form-control" placeholder="Rocafuerte" type="text" [(ngModel)]="preinscripcion.calle2" required="">
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="form-group horarios">
+          <!--input type="radio" name="fpago" value="TB" [(ngModel)]="formaPago" (change)="setFPago()"> Transferencia Bancaria
+          <input type="radio" name="fpago" value="PP" [(ngModel)]="formaPago" (change)="setFPago()"> Paypal
+          <br><br>
+          <!--ng-container *ngIf="formaPago=='TB'; else paypal"-->
+            <div class="address">
+              <h5>Comprobante de pago:</h5>
+              <p>Deberá cargar el comprobante de deposito o transferencia a la cuenta del
+                Sindicato de Choferes de Espejo.</p>
+              <p>BANECUADOR <br> CUENTA CORRIENTE #0400000697 <br> SINDICATO DE CHOFERES PROFESIONALES DE ESPEJO
+
+              </p>
+              <p> </p>
+              <p></p>
+              <p><strong>VALOR $100.00</strong></p>
+              <p><strong>Nota: Si usted es socio del sindicato, no necesita cargar el comprobante, simplemente llene su información de manera correcta.</strong></p>
+              <br>
+              <input name="Comprobante" class="form-control" (change)="handleFileInput($event.target.files)"
+            placeholder="sindicatoespejo@hotmail.com" type="file" required="">
+            </div>
+          <!--/ng-container-->
+          <!--ng-template #paypal-->
+          <!--div class="{{display2}}">
+            <div id="paypal-button-container"></div>
+          </div-->
+          <!--/ng-template-->
+
+        </div>
+        <div class="d-flex justify-content-center">
+          <input type="button" class="btn btn-lg btn-success" value="Enviar Solicitud" (click)="enviar()">
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>

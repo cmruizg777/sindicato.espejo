@@ -1,0 +1,125 @@
+
+
+<!-- contact -->
+<div class="contact">
+  <div class="container">
+    <div class="w3l-heading">
+      <h2 class="w3ls_head">Solicitud de Examén Sensométrico</h2>
+      <!--mat-progress-bar mode="indeterminate" color="accent"></mat-progress-bar-->
+      <br>
+      <br>
+    </div>
+    <div class="container">
+      <div class="col-md-12 w3layouts_register_right">
+        <form action="#" method="post">
+          <div class="form-group">
+            <div class="address">
+              <h5>Fecha:</h5>
+            </div>
+            <input name="fecha" matInput [matDatepicker]="dp" [min]="start" placeholder="yyyy-mm-dd" [(ngModel)]="fecha" (dateChange)="turnosInfo()">
+            <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+            <mat-datepicker #dp [startAt]="start"></mat-datepicker>
+          </div>
+          <div class="form-group">
+            <div class="address">
+              <h5>Seleccione un horario libre:</h5>
+              <p>En caso de no haber uno libre, debe seleccionar otra fecha.</p>
+              <div class="horarios">
+                <div class="row">
+                  <div class="col-md-12 col-sm-12" *ngFor="let h of horarios">
+                    <p>
+                      <ng-container *ngIf="h.libre; else horarioOcupado">
+                        <input type="radio" name="horario" value="{{h.horario}}" [(ngModel)]="horario" >
+                        {{h.horario}} &emsp;
+                        <strong class="text-success" >Libre</strong>
+                      </ng-container>
+                      <ng-template #horarioOcupado>
+                        {{h.horario}} &emsp;
+                        <strong class="text-danger">Ocupado</strong>
+                      </ng-template>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-4">
+              <div class="address">
+                <h5>Cédula:</h5>
+              </div>
+              <input name="Cedula" placeholder="0452813749" type="text" [(ngModel)]="cedula" (change)="validarCedula()"  maxlength="10" required=""  >
+            </div>
+            <div class="form-group col-md-4">
+              <div class="address">
+                <h5>Nombre:</h5>
+              </div>
+              <input name="Nombre" placeholder="Juanito" type="text" [(ngModel)]="nombre" required="">
+            </div>
+
+            <div class="form-group col-md-4">
+              <div class="address">
+                <h5>Apellido:</h5>
+              </div>
+              <input name="Apellido" placeholder="Pérez" type="text" [(ngModel)]="apellido" required="">
+            </div>
+            <div class="form-group col-md-4">
+              <div class="address">
+                <h5>Email:</h5>
+              </div>
+              <input name="Email" placeholder="sindicatoespejo@hotmail.com" type="email" [(ngModel)]="email" required="">
+            </div>
+            <div class="form-group col-md-4">
+              <div class="address">
+                <h5>Telefono:</h5>
+              </div>
+              <input name="Telf" placeholder="0989898989" type="text" [(ngModel)]="telf" required="">
+            </div>
+            <div class="form-group col-md-4">
+              <div class="address">
+                <h5>Dirección:</h5>
+              </div>
+              <input name="Direccion" placeholder="Ibarra, Bolivar 123 y Rocafuerte" type="text" [(ngModel)]="direccion" required="">
+            </div>
+          </div>
+
+          <div class="form-group horarios">
+            <!--input type="radio" name="fpago" value="TB" [(ngModel)]="formaPago" (change)="setFPago()"> Transferencia Bancaria
+            <input type="radio" name="fpago" value="PP" [(ngModel)]="formaPago" (change)="setFPago()"> Paypal
+            <br><br>
+            <!--ng-container *ngIf="formaPago=='TB'; else paypal"-->
+              <div class="address">
+                <h5>Comprobante de pago:</h5>
+                <p>Deberá cargar el comprobante de deposito o transferencia a la cuenta del
+                  Sindicato de Choferes de Espejo.</p>
+                <p>BANECUADOR</p>
+                <p>CUENTA CORRIENTE #0400000697 </p>
+                <p>SINDICATO DE CHOFERES PROFESIONALES DE ESPEJO</p>
+                <p><strong>VALOR $20.00</strong></p>
+                <p><strong>Nota: Si usted es socio del sindicato, no necesita cargar el comprobante, simplemente llene su información de manera correcta.</strong></p>
+                <br>
+                <input name="Comprobante" class="form-control" (change)="handleFileInput($event.target.files)"
+              placeholder="sindicatoespejo@hotmail.com" type="file" required="">
+              </div>
+            <!--/ng-container-->
+            <!--ng-template #paypal-->
+            <!--div class="{{display2}}">
+              <div id="paypal-button-container"></div>
+            </div-->
+            <!--/ng-template-->
+
+          </div>
+          <input type="button" value="Enviar Solicitud" (click)="enviar()">
+        </form>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+
+
+    </div>
+  </div>
+
+<!--div class="agileits-w3layouts-map">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555" allowfullscreen></iframe>
+</div-->
+<!-- //contact -->
